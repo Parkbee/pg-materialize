@@ -77,7 +77,7 @@ def format_content(entity):
     content_no_txn = entity['content'] \
         .replace('BEGIN;', '') \
         .replace('COMMIT;', '')
-    return "  -- %s%s" % (file_name, content_no_txn)
+    return "-- %s\n%s" % (file_name, content_no_txn)
 
 def generate_script(views, transaction, spacer=''):
     lines = [ spacer.join(views) ]
